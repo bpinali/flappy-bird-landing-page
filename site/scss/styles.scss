@@ -1,17 +1,34 @@
 @import "variables";
 @import "mixins";
 @import "carousel";
+
+a:link, a:hover, a:visited{color: $background-color}
+
 body {
     background-color: #5DDF72;
     color: #262626;
     background-image: url(../img/bg.png);
     background-repeat: repeat-x;
     font-family: "Roboto", sans-serif;
+    p {
+      @media screen and ($mobile) {
+          @include font-size(14px);
+          line-height: 1.4em;
+      }
+      @media screen and ($tablet) {
+          @include font-size(16px);
+          line-height: 1.6em;
+      }
+    }
 }
 
 .container {
-    margin-top: 6%;
-    width: 80%;
+    @media screen and ($mobile) {
+        width: 95%;
+    }
+    @media screen and ($tablet) {
+        width: 80%;
+    }
 }
 
 .center {
@@ -24,15 +41,22 @@ header {
         margin-top: 30px;
         margin-bottom: 1.5rem;
         @include title-font;
-        @include font-size(85px);
         color: #fff;
         letter-spacing: -0.1rem;
-        text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.5);
+        text-shadow: 5px 5px 8px rgba(20, 20, 20, 0.6);
+        @media screen and ($mobile) {
+            @include font-size(50px);
+        }
+        @media screen and ($tablet) {
+            @include font-size(85px);
+        }
     }
     img {
         max-width: 35%;
         height: auto;
         margin-bottom: 2rem;
+        -webkit-filter: drop-shadow(5px 5px 8px rgba(20, 20, 20, 0.6));
+        filter: drop-shadow(5px 5px 8px rgba(20, 20, 20, 0.6));
     }
 }
 
@@ -40,11 +64,16 @@ header {
     @include section;
     @include box-shadow;
     @include rounded;
-    line-height: 2rem;
     h2 {
         @include title-font;
         @include font-size(36px);
         margin-top: 0;
+        @media screen and ($mobile) {
+            @include font-size(24px);
+        }
+        @media screen and ($tablet) {
+            @include font-size(36px);
+        }
     }
 }
 
@@ -56,6 +85,12 @@ header {
         @include title-font;
         @include font-size(36px);
         margin-top: 0;
+        @media screen and ($mobile) {
+            @include font-size(24px);
+        }
+        @media screen and ($tablet) {
+            @include font-size(36px);
+        }
     }
 }
 
@@ -67,9 +102,37 @@ header {
         @include title-font;
         @include font-size(48px);
         margin-top: 0;
+        @media screen and ($mobile) {
+            @include font-size(36px);
+        }
+        @media screen and ($tablet) {
+            @include font-size(48px);
+        }
     }
-    img {
-        width: 30%;
-        height: auto;
+    i {
+      color: $background-color;
+      text-shadow: -5px -5px 8px rgba(20, 20, 20, 0.4);
+      @media screen and ($mobile) {
+          font-size: 12rem;
+      }
+      @media screen and ($tablet) {
+          font-size: 20rem;
+      }
     }
+}
+footer {
+  text-align: center;
+  background-color: $dark-background-color;
+  color: $section-color;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  @include font-size(14px);
+  @include box-shadow;
+@include rounded;
+  @media screen and ($mobile) {
+    @include font-size(11px);
+  }
+  @media screen and (min-width: 600px) {
+    @include font-size(14px);
+  }
 }
