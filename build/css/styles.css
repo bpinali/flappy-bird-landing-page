@@ -231,12 +231,12 @@ header img {
   .call-to-action i {
     color: #5DDF72;
     text-shadow: -4px -4px 5px rgba(20, 20, 20, 0.4); }
-    @media screen and (min-width: 400px) {
-      .call-to-action i {
-        font-size: 12rem; } }
-    @media screen and (min-width: 768px) {
-      .call-to-action i {
-        font-size: 20rem; } }
+  @media screen and (min-width: 400px) {
+    .call-to-action {
+      font-size: 12rem; } }
+  @media screen and (min-width: 768px) {
+    .call-to-action {
+      font-size: 20rem; } }
 
 footer {
   text-align: center;
