@@ -31,18 +31,12 @@ gulp.task('html', function () {
         .pipe(minifyHTML())
         .pipe(gulp.dest('build/'));
 });
-
 // JavaScript build task, removes whitespace and concatenates all files
-/*
 gulp.task('scripts', function() {
-  return browserify('site/js/main.js')
-    .bundle()
-    .pipe(source('app.js'))
-    .pipe(buffer())
+return gulp.src('site/js/*')
     .pipe(uglify())
-    .pipe(gulp.dest('build/js'));
+    .pipe(gulp.dest('build/js/'));
 });
-*/
 
 // Styles build task, concatenates all the files
 gulp.task('styles', function () {
@@ -68,4 +62,4 @@ gulp.task('watch', function () {
 gulp.task('default', ['jshint', 'sass', 'watch']);
 
 // Build task
-gulp.task('build', ['jshint', 'sass', 'html', /*'scripts',*/ 'styles', 'images'])
+gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'styles', 'images'])
